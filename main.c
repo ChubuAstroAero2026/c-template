@@ -1,9 +1,6 @@
 #include <stdio.h>
 
 int main()
-{
-  //ここにコードを書く
-
-  
+{printf{"hoof woor"};
   return 0;
 }
