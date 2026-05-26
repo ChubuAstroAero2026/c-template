@@ -22,9 +22,9 @@ jobs:
         command: gcc main.c -o main && ./main
         input: '3'
         expected-output: |-
-            *
-           ***
-          *****
+            a
+           aaa
+          aaaaa
         comparison-method: exact
         timeout: 1
         max-score: 25
@@ -37,11 +37,11 @@ jobs:
         command: gcc main.c -o main && ./main
         input: '5'
         expected-output: |-
-              *
-             ***
-            *****
-           *******
-          *********
+              a
+             aaa
+            aaaaa
+           aaaaaaa
+          aaaaaaaaa
         comparison-method: exact
         timeout: 1
         max-score: 25
@@ -54,7 +54,7 @@ jobs:
         command: gcc main.c -o main && ./main
         input: '1'
         expected-output: |-
-          *
+          a
         comparison-method: exact
         timeout: 1
         max-score: 25
@@ -67,14 +67,14 @@ jobs:
         command: gcc main.c -o main && ./main
         input: '8'
         expected-output: |-
-                 *
-                ***
-               *****
-              *******
-             *********
-            ***********
-           *************
-          ***************
+                 a
+                aaa
+               aaaaa
+              aaaaaaa
+             aaaaaaaaa
+            aaaaaaaaaaa
+           aaaaaaaaaaaaa
+          aaaaaaaaaaaaaaa
         comparison-method: exact
         timeout: 1
         max-score: 25
