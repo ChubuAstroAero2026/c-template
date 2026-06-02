@@ -13,95 +13,68 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Test6-sp1-1
-      id: test6-sp1-1
+    - name: Test6-3-1
+      id: test6-3-1
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test6-sp1-1
+        test-name: Test6-3-1
         setup-command: ''
         command: gcc main.c -o main && ./main
         input: |-
-          10.5
-          25.3
-          18.0
-          40.2
-          0
-        expected-output: '25.3'
+          ChubuUniversity
+          u
+        expected-output: '2'
         comparison-method: exact
         timeout: 1
-        max-score: 20
-    - name: Test6-sp1-2
-      id: test6-sp1-2
+        max-score: 25
+    - name: Test6-3-2
+      id: test6-3-2
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test6-sp1-2
+        test-name: Test6-3-2
         setup-command: ''
         command: gcc main.c -o main && ./main
         input: |-
-          50.0
-          30.5
-          20.1
-          10.0
-          0
-        expected-output: '30.5'
+          AstronauticsandAeronautics
+          a
+        expected-output: '6'
         comparison-method: exact
         timeout: 1
-        max-score: 20
-    - name: Test6-sp1-3
-      id: test6-sp1-3
+        max-score: 25
+    - name: Test6-3-3
+      id: test6-3-3
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test6-sp1-3
+        test-name: Test6-3-3
         setup-command: ''
         command: gcc main.c -o main && ./main
         input: |-
-          15.2
-          5.5
-          35.8
-          22.4
-          0
-        expected-output: '22.4'
+          Paiza
+          z
+        expected-output: '3'
         comparison-method: exact
         timeout: 1
-        max-score: 20
-    - name: Test6-sp1-4
-      id: test6-sp1-4
+        max-score: 25
+    - name: Test6-3-4
+      id: test6-3-4
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test6-sp1-4
+        test-name: Test6-3-4
         setup-command: ''
         command: gcc main.c -o main && ./main
         input: |-
-          1.2
-          8.9
-          0
-        expected-output: '1.2'
+          MacBook
+          a
+        expected-output: '1'
         comparison-method: exact
         timeout: 1
-        max-score: 20
-    - name: Test6-sp1-5
-      id: test6-sp1-5
-      uses: classroom-resources/autograding-io-grader@v1
-      with:
-        test-name: Test6-sp1-5
-        setup-command: ''
-        command: gcc main.c -o main && ./main
-        input: |-
-          42.1
-          42.1
-          10.5
-          0
-        expected-output: '42.1'
-        comparison-method: exact
-        timeout: 1
-        max-score: 20
+        max-score: 25
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        TEST6-SP1-1_RESULTS: "${{steps.test6-sp1-1.outputs.result}}"
-        TEST6-SP1-2_RESULTS: "${{steps.test6-sp1-2.outputs.result}}"
-        TEST6-SP1-3_RESULTS: "${{steps.test6-sp1-3.outputs.result}}"
-        TEST6-SP1-4_RESULTS: "${{steps.test6-sp1-4.outputs.result}}"
-        TEST6-SP1-5_RESULTS: "${{steps.test6-sp1-5.outputs.result}}"
+        TEST6-3-1_RESULTS: "${{steps.test6-3-1.outputs.result}}"
+        TEST6-3-2_RESULTS: "${{steps.test6-3-2.outputs.result}}"
+        TEST6-3-3_RESULTS: "${{steps.test6-3-3.outputs.result}}"
+        TEST6-3-4_RESULTS: "${{steps.test6-3-4.outputs.result}}"
       with:
-        runners: test6-sp1-1,test6-sp1-2,test6-sp1-3,test6-sp1-4,test6-sp1-5
+        runners: test6-3-1,test6-3-2,test6-3-3,test6-3-4
