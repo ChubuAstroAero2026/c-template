@@ -13,48 +13,100 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Test7-2-1
-      id: test7-2-1
+    - name: Test7-3-1
+      id: test7-3-1
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test7-2-1
+        test-name: Test7-3-1
         setup-command: ''
         command: gcc main.c -o main && ./main
-        input: |-
-          1 2 3 
-          4 5 6 
-          8 7 
-          6 5 
-          4 3 
+        input: '31415926535897932846'
         expected-output: |-
-          32	26	
-          86	71	
+          '0' : 
+          '1' : 11
+          '2' : 22
+          '3' : 333
+          '4' : 44
+          '5' : 555
+          '6' : 66
+          '7' : 7
+          '8' : 88
+          '9' : 999
         comparison-method: exact
         timeout: 1
-        max-score: 50
-    - name: Test7-2-2
-      id: test7-2-2
+        max-score: 25
+    - name: Test7-3-2
+      id: test7-3-2
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test7-2-2
+        test-name: Test7-3-2
         setup-command: ''
         command: gcc main.c -o main && ./main
-        input: |-
-          -1 -2 -3 
-          4 5 6 
-          8 7 
-          6 5 
-          4 3 
+        input: '01234567899876543210'
         expected-output: |-
-          -32	-26	
-          86	71	
+          '0' : 00
+          '1' : 11
+          '2' : 22
+          '3' : 3333
+          '4' : 44
+          '5' : 55
+          '6' : 66
+          '7' : 77
+          '8' : 88
+          '9' : 99
         comparison-method: exact
         timeout: 1
-        max-score: 50
+        max-score: 25
+    - name: Test7-3-3
+      id: test7-3-3
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Test7-3-3
+        setup-command: ''
+        command: gcc main.c -o main && ./main
+        input: '7777777'
+        expected-output: |-
+          '0' : 
+          '1' : 
+          '2' : 
+          '3' : 
+          '4' : 
+          '5' : 
+          '6' : 
+          '7' : 7777777
+          '8' : 
+          '9' : 
+        comparison-method: exact
+        timeout: 1
+        max-score: 25
+    - name: Test7-3-4
+      id: test7-3-4
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Test7-3-4
+        setup-command: ''
+        command: gcc main.c -o main && ./main
+        input: '5'
+        expected-output: |-
+          '0' : 
+          '1' : 
+          '2' : 
+          '3' : 
+          '4' : 
+          '5' : 5
+          '6' : 
+          '7' : 
+          '8' : 
+          '9' : 
+        comparison-method: exact
+        timeout: 1
+        max-score: 25
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        TEST7-2-1_RESULTS: "${{steps.test7-2-1.outputs.result}}"
-        TEST7-2-2_RESULTS: "${{steps.test7-2-2.outputs.result}}"
+        TEST7-3-1_RESULTS: "${{steps.test7-3-1.outputs.result}}"
+        TEST7-3-2_RESULTS: "${{steps.test7-3-2.outputs.result}}"
+        TEST7-3-3_RESULTS: "${{steps.test7-3-3.outputs.result}}"
+        TEST7-3-4_RESULTS: "${{steps.test7-3-4.outputs.result}}"
       with:
-        runners: test7-2-1,test7-2-2
+        runners: test7-3-1,test7-3-2,test7-3-3,test7-3-4
