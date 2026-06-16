@@ -13,96 +13,60 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Test8-1-1
-      id: test8-1-1
+    - name: Test8-2-1
+      id: test8-2-1
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test8-1-1
+        test-name: Test8-2-1
         setup-command: ''
         command: gcc main.c -o main && ./main
-        input: |-
-          1
-          6
-          2
-          3
-          4
-          5
-          7
-          8
-          9
-        expected-output: '5'
+        input: "-5"
+        expected-output: "-5の絶対値は5です"
         comparison-method: exact
         timeout: 1
         max-score: 25
-    - name: Test8-1-2
-      id: test8-1-2
+    - name: Test8-2-2
+      id: test8-2-2
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test8-1-2
+        test-name: Test8-2-2
         setup-command: ''
         command: gcc main.c -o main && ./main
-        input: |-
-          23
-          -4
-          2
-          0
-          1
-          7
-          11
-          108
-          -6
-        expected-output: '2'
+        input: '12'
+        expected-output: 12の絶対値は12です
         comparison-method: exact
         timeout: 1
         max-score: 25
-    - name: Test8-1-3
-      id: test8-1-3
+    - name: Test8-2-3
+      id: test8-2-3
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test8-1-3
+        test-name: Test8-2-3
         setup-command: ''
         command: gcc main.c -o main && ./main
-        input: |-
-          43
-          857
-          -1234
-          54
-          12
-          4
-          1
-          45
-          5
-        expected-output: '12'
+        input: '0'
+        expected-output: 0の絶対値は0です
         comparison-method: exact
         timeout: 1
         max-score: 25
-    - name: Test8-1-4
-      id: test8-1-4
+    - name: Test8-2-4
+      id: test8-2-4
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test8-1-4
+        test-name: Test8-2-4
         setup-command: ''
         command: gcc main.c -o main && ./main
-        input: |-
-          12
-          5
-          85
-          43
-          22
-          7
-          64
-          19
-          30
-        expected-output: '22'
+        input: "-999"
+        expected-output: "-999の絶対値は999です"
         comparison-method: exact
         timeout: 1
         max-score: 25
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        TEST8-1-1_RESULTS: "${{steps.test8-1-1.outputs.result}}"
-        TEST8-1-2_RESULTS: "${{steps.test8-1-2.outputs.result}}"
-        TEST8-1-3_RESULTS: "${{steps.test8-1-3.outputs.result}}"
-        TEST8-1-4_RESULTS: "${{steps.test8-1-4.outputs.result}}"
+        TEST8-2-1_RESULTS: "${{steps.test8-2-1.outputs.result}}"
+        TEST8-2-2_RESULTS: "${{steps.test8-2-2.outputs.result}}"
+        TEST8-2-3_RESULTS: "${{steps.test8-2-3.outputs.result}}"
+        TEST8-2-4_RESULTS: "${{steps.test8-2-4.outputs.result}}"
       with:
-        runners: test8-1-1,test8-1-2,test8-1-3,test8-1-4
+        runners: test8-2-1,test8-2-2,test8-2-3,test8-2-4
