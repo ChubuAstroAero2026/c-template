@@ -13,60 +13,72 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Test9-3-1
-      id: test9-3-1
+    - name: Test9-4-1
+      id: test9-4-1
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test9-3-1
+        test-name: Test9-4-1
         setup-command: ''
         command: gcc main.c -o main && ./main
-        input: '2024'
-        expected-output: 2024年はうるう年です。
+        input: |-
+          1.5
+          300
+          1500
+        expected-output: 当選確率は 7.278 % です。
         comparison-method: exact
         timeout: 1
         max-score: 25
-    - name: Test9-3-2
-      id: test9-3-2
+    - name: Test9-4-2
+      id: test9-4-2
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test9-3-2
+        test-name: Test9-4-2
         setup-command: ''
         command: gcc main.c -o main && ./main
-        input: '2100'
-        expected-output: 2100年は平年です。
+        input: |-
+          10.0
+          300
+          200
+        expected-output: 当選確率は 0.000 % です。
         comparison-method: exact
         timeout: 1
         max-score: 25
-    - name: Test9-3-3
-      id: test9-3-3
+    - name: Test9-4-3
+      id: test9-4-3
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test9-3-3
+        test-name: Test9-4-3
         setup-command: ''
         command: gcc main.c -o main && ./main
-        input: '2000'
-        expected-output: 2000年はうるう年です。
+        input: |-
+          2.5
+          300
+          300
+        expected-output: 当選確率は 2.500 % です。
         comparison-method: exact
         timeout: 1
         max-score: 25
-    - name: Test9-3-4
-      id: test9-3-4
+    - name: Test9-4-4
+      id: test9-4-4
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test9-3-4
+        test-name: Test9-4-4
         setup-command: ''
         command: gcc main.c -o main && ./main
-        input: '2023'
-        expected-output: 2023年は平年です。
+        input: |-
+          50.0
+          100
+          300
+        expected-output: 当選確率は 87.500 % です。
         comparison-method: exact
         timeout: 1
         max-score: 25
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        TEST9-3-1_RESULTS: "${{steps.test9-3-1.outputs.result}}"
-        TEST9-3-2_RESULTS: "${{steps.test9-3-2.outputs.result}}"
-        TEST9-3-3_RESULTS: "${{steps.test9-3-3.outputs.result}}"
-        TEST9-3-4_RESULTS: "${{steps.test9-3-4.outputs.result}}"
+        TEST9-4-1_RESULTS: "${{steps.test9-4-1.outputs.result}}"
+        TEST9-4-2_RESULTS: "${{steps.test9-4-2.outputs.result}}"
+        TEST9-4-3_RESULTS: "${{steps.test9-4-3.outputs.result}}"
+        TEST9-4-4_RESULTS: "${{steps.test9-4-4.outputs.result}}"
       with:
-        runners: test9-3-1,test9-3-2,test9-3-3,test9-3-4
+        runners: test9-4-1,test9-4-2,test9-4-3,test9-4-4
