@@ -13,68 +13,60 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Test9-1-1
-      id: test9-1-1
+    - name: Test9-2-1
+      id: test9-2-1
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test9-1-1
+        test-name: Test9-2-1
         setup-command: ''
         command: gcc main.c -o main && ./main
-        input: |-
-          15
-          85
-        expected-output: 15番の点数は 85点です
+        input: '35'
+        expected-output: '36'
         comparison-method: exact
         timeout: 1
         max-score: 25
-    - name: Test9-1-2
-      id: test9-1-2
+    - name: Test9-2-2
+      id: test9-2-2
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test9-1-2
+        test-name: Test9-2-2
         setup-command: ''
         command: gcc main.c -o main && ./main
-        input: |-
-          3
-          100
-        expected-output: 3番の点数は 100点です
+        input: '59'
+        expected-output: '0'
         comparison-method: exact
         timeout: 1
         max-score: 25
-    - name: Test9-1-3
-      id: test9-1-3
+    - name: Test9-2-3
+      id: test9-2-3
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test9-1-3
+        test-name: Test9-2-3
         setup-command: ''
         command: gcc main.c -o main && ./main
-        input: |-
-          40
-          0
-        expected-output: 40番の点数は 0点です
+        input: '0'
+        expected-output: '1'
         comparison-method: exact
         timeout: 1
         max-score: 25
-    - name: Test9-1-4
-      id: test9-1-4
+    - name: Test9-2-4
+      id: test9-2-4
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test9-1-4
+        test-name: Test9-2-4
         setup-command: ''
         command: gcc main.c -o main && ./main
-        input: |-
-          102
-          65
-        expected-output: 102番の点数は 65点です
+        input: '58'
+        expected-output: '59'
         comparison-method: exact
         timeout: 1
         max-score: 25
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        TEST9-1-1_RESULTS: "${{steps.test9-1-1.outputs.result}}"
-        TEST9-1-2_RESULTS: "${{steps.test9-1-2.outputs.result}}"
-        TEST9-1-3_RESULTS: "${{steps.test9-1-3.outputs.result}}"
-        TEST9-1-4_RESULTS: "${{steps.test9-1-4.outputs.result}}"
+        TEST9-2-1_RESULTS: "${{steps.test9-2-1.outputs.result}}"
+        TEST9-2-2_RESULTS: "${{steps.test9-2-2.outputs.result}}"
+        TEST9-2-3_RESULTS: "${{steps.test9-2-3.outputs.result}}"
+        TEST9-2-4_RESULTS: "${{steps.test9-2-4.outputs.result}}"
       with:
-        runners: test9-1-1,test9-1-2,test9-1-3,test9-1-4
+        runners: test9-2-1,test9-2-2,test9-2-3,test9-2-4
