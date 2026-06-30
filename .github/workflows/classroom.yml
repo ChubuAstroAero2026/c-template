@@ -13,88 +13,98 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Test10-3-1
-      id: test10-3-1
+    - name: Test10-4-1
+      id: test10-4-1
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test10-3-1
+        test-name: Test10-4-1
         setup-command: ''
         command: gcc main.c -o main && ./main
         input: |-
           1
-          2
         expected-output: |-
-          0.50
+          305.96
         comparison-method: exact
         timeout: 1
-        max-score: 20
-    - name: Test10-3-2
-      id: test10-3-2
+        max-score: 17
+    - name: Test10-4-2
+      id: test10-4-2
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test10-3-2
+        test-name: Test10-4-2
         setup-command: ''
         command: gcc main.c -o main && ./main
         input: |-
-          4
-          3
+          10
         expected-output: |-
-          1.33
+          3.06
         comparison-method: exact
         timeout: 1
-        max-score: 20
-    - name: Test10-3-3
-      id: test10-3-3
+        max-score: 17
+    - name: Test10-4-3
+      id: test10-4-3
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test10-3-3
+        test-name: Test10-4-3
         setup-command: ''
         command: gcc main.c -o main && ./main
         input: |-
-          100
-          25
+          3.14
         expected-output: |-
-          4.00
+          31.03
         comparison-method: exact
         timeout: 1
-        max-score: 20
-    - name: Test10-3-4
-      id: test10-3-4
+        max-score: 17
+    - name: Test10-4-4
+      id: test10-4-4
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test10-3-4
+        test-name: Test10-4-4
         setup-command: ''
         command: gcc main.c -o main && ./main
         input: |-
           3
-          5
         expected-output: |-
-          0.60
+          34.00
         comparison-method: exact
         timeout: 1
-        max-score: 20
-    - name: Test10-3-5
-      id: test10-3-5
+        max-score: 17
+    - name: Test10-4-5
+      id: test10-4-5
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test10-3-5
+        test-name: Test10-4-5
         setup-command: ''
         command: gcc main.c -o main && ./main
         input: |-
-          -10
-          2
+          5.2
         expected-output: |-
-          -5.00
+          11.32
         comparison-method: exact
         timeout: 1
-        max-score: 20
+        max-score: 16
+    - name: Test10-4-6
+      id: test10-4-6
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Test10-4-6
+        setup-command: ''
+        command: gcc main.c -o main && ./main
+        input: |-
+          123
+        expected-output: |-
+          0.02
+        comparison-method: exact
+        timeout: 1
+        max-score: 16
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        TEST10-3-1_RESULTS: "${{steps.test10-3-1.outputs.result}}"
-        TEST10-3-2_RESULTS: "${{steps.test10-3-2.outputs.result}}"
-        TEST10-3-3_RESULTS: "${{steps.test10-3-3.outputs.result}}"
-        TEST10-3-4_RESULTS: "${{steps.test10-3-4.outputs.result}}"
-        TEST10-3-5_RESULTS: "${{steps.test10-3-5.outputs.result}}"
+        TEST10-4-1_RESULTS: "${{steps.test10-4-1.outputs.result}}"
+        TEST10-4-2_RESULTS: "${{steps.test10-4-2.outputs.result}}"
+        TEST10-4-3_RESULTS: "${{steps.test10-4-3.outputs.result}}"
+        TEST10-4-4_RESULTS: "${{steps.test10-4-4.outputs.result}}"
+        TEST10-4-5_RESULTS: "${{steps.test10-4-5.outputs.result}}"
+        TEST10-4-6_RESULTS: "${{steps.test10-4-6.outputs.result}}"
       with:
-        runners: test10-3-1,test10-3-2,test10-3-3,test10-3-4,test10-3-5
+        runners: test10-4-1,test10-4-2,test10-4-3,test10-4-4,test10-4-5,test10-4-6
