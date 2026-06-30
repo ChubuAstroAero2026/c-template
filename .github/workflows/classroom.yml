@@ -13,128 +13,140 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Test10-1-1
-      id: test10-1-1
+    - name: Test10-2-1
+      id: test10-2-1
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test10-1-1
+        test-name: Test10-2-1
         setup-command: ''
         command: gcc main.c -o main && ./main
         input: |-
-          5
-          23800
-          19800
-          24800
-          19600
-          21955
+          90
+          60
+          80
+          95
+          88
+          85
+          30
+          20
+          55
+          98
+          50
+          88
+          30
+          95
+          80
         expected-output: |-
-          4番目のサイトの19600円が最安値です。
+          国語の最高点：98
+          数学の最高点：95
+          英語の最高点：88
+          1人目の３科目平均点：76.67
+          2人目の３科目平均点：89.33
+          3人目の３科目平均点：35.00
+          4人目の３科目平均点：78.67
+          5人目の３科目平均点：68.33
+          国語の平均点：68.60
+          数学の平均点：62.60
+          英語の平均点：77.60
+          1人目の最低点：60
+          2人目の最低点：85
+          3人目の最低点：20
+          4人目の最低点：50
+          5人目の最低点：30
         comparison-method: exact
         timeout: 1
-        max-score: 20
-    - name: Test10-1-2
-      id: test10-1-2
+        max-score: 34
+    - name: Test10-2-2
+      id: test10-2-2
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test10-1-2
-        setup-command: ''
-        command: gcc main.c -o main && ./main
-        input: |-
-          3
-          198
-          256
-          100
-        expected-output: |-
-          3番目のサイトの100円が最安値です。
-        comparison-method: exact
-        timeout: 1
-        max-score: 18
-    - name: Test10-1-3
-      id: test10-1-3
-      uses: classroom-resources/autograding-io-grader@v1
-      with:
-        test-name: Test10-1-3
-        setup-command: ''
-        command: gcc main.c -o main && ./main
-        input: |-
-          1
-          1000000
-        expected-output: |-
-          1番目のサイトの1000000円が最安値です。
-        comparison-method: exact
-        timeout: 1
-        max-score: 17
-    - name: Test10-1-4
-      id: test10-1-4
-      uses: classroom-resources/autograding-io-grader@v1
-      with:
-        test-name: Test10-1-4
-        setup-command: ''
-        command: gcc main.c -o main && ./main
-        input: |-
-          1
-          100
-        expected-output: |-
-          1番目のサイトの100円が最安値です。
-        comparison-method: exact
-        timeout: 1
-        max-score: 15
-    - name: Test10-1-5
-      id: test10-1-5
-      uses: classroom-resources/autograding-io-grader@v1
-      with:
-        test-name: Test10-1-5
+        test-name: Test10-2-2
         setup-command: ''
         command: gcc main.c -o main && ./main
         input: |-
           10
-          10000
-          1000000
-          100
-          13
-          42
-          6534
-          54
+          50
+          80
+          95
+          68
+          85
+          50
+          20
+          55
           78
-          12
-          0
+          50
+          48
+          30
+          95
+          100
         expected-output: |-
-          10番目のサイトの0円が最安値です。
+          国語の最高点：95
+          数学の最高点：95
+          英語の最高点：100
+          1人目の３科目平均点：46.67
+          2人目の３科目平均点：82.67
+          3人目の３科目平均点：41.67
+          4人目の３科目平均点：58.67
+          5人目の３科目平均点：75.00
+          国語の平均点：52.60
+          数学の平均点：56.60
+          英語の平均点：73.60
+          1人目の最低点：10
+          2人目の最低点：68
+          3人目の最低点：20
+          4人目の最低点：48
+          5人目の最低点：30
         comparison-method: exact
         timeout: 1
-        max-score: 15
-    - name: Test10-1-6
-      id: test10-1-6
+        max-score: 33
+    - name: Test10-2-3
+      id: test10-2-3
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test10-1-6
+        test-name: Test10-2-3
         setup-command: ''
         command: gcc main.c -o main && ./main
         input: |-
-          10
-          10000
-          1000000
-          100
-          13
-          42
-          6534
-          54
+          60
+          50
+          30
+          95
+          68
+          24
+          50
+          20
+          55
           78
-          12
-          100000
+          50
+          18
+          50
+          15
+          20
         expected-output: |-
-          9番目のサイトの12円が最安値です。
+          国語の最高点：95
+          数学の最高点：68
+          英語の最高点：55
+          1人目の３科目平均点：46.67
+          2人目の３科目平均点：62.33
+          3人目の３科目平均点：41.67
+          4人目の３科目平均点：48.67
+          5人目の３科目平均点：28.33
+          国語の平均点：66.60
+          数学の平均点：40.60
+          英語の平均点：29.40
+          1人目の最低点：30
+          2人目の最低点：24
+          3人目の最低点：20
+          4人目の最低点：18
+          5人目の最低点：15
         comparison-method: exact
         timeout: 1
-        max-score: 15
+        max-score: 33
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        TEST10-1-1_RESULTS: "${{steps.test10-1-1.outputs.result}}"
-        TEST10-1-2_RESULTS: "${{steps.test10-1-2.outputs.result}}"
-        TEST10-1-3_RESULTS: "${{steps.test10-1-3.outputs.result}}"
-        TEST10-1-4_RESULTS: "${{steps.test10-1-4.outputs.result}}"
-        TEST10-1-5_RESULTS: "${{steps.test10-1-5.outputs.result}}"
-        TEST10-1-6_RESULTS: "${{steps.test10-1-6.outputs.result}}"
+        TEST10-2-1_RESULTS: "${{steps.test10-2-1.outputs.result}}"
+        TEST10-2-2_RESULTS: "${{steps.test10-2-2.outputs.result}}"
+        TEST10-2-3_RESULTS: "${{steps.test10-2-3.outputs.result}}"
       with:
-        runners: test10-1-1,test10-1-2,test10-1-3,test10-1-4,test10-1-5,test10-1-6
+        runners: test10-2-1,test10-2-2,test10-2-3
