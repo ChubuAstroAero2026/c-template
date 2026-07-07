@@ -13,30 +13,11 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Test11-2-1
-      id: test11-2-1
+    - name: Test11-3-1
+      id: test11-3-1
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test11-2-1
-        setup-command: ''
-        command: gcc main.c -o main && ./main
-        input: |-
-          45
-          7
-          92
-          18
-          53
-        expected-output: |-
-          最大値：92
-          最小値：7
-        comparison-method: exact
-        timeout: 1
-        max-score: 25
-    - name: Test11-2-2
-      id: test11-2-2
-      uses: classroom-resources/autograding-io-grader@v1
-      with:
-        test-name: Test11-2-2
+        test-name: Test11-3-1
         setup-command: ''
         command: gcc main.c -o main && ./main
         input: |-
@@ -46,55 +27,70 @@ jobs:
           40
           50
         expected-output: |-
-          最大値：50
-          最小値：10
+          合計値は 150 です。
         comparison-method: exact
         timeout: 1
         max-score: 25
-    - name: Test11-2-3
-      id: test11-2-3
+    - name: Test11-3-2
+      id: test11-3-2
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test11-2-3
+        test-name: Test11-3-2
         setup-command: ''
         command: gcc main.c -o main && ./main
         input: |-
-          -5
-          -12
+          0
+          0
+          0
+          0
+          0
+        expected-output: |-
+          合計値は 0 です。
+        comparison-method: exact
+        timeout: 1
+        max-score: 25
+    - name: Test11-3-3
+      id: test11-3-3
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Test11-3-3
+        setup-command: ''
+        command: gcc main.c -o main && ./main
+        input: |-
+          -1
+          -2
           -3
-          -8
-          -20
+          -4
+          -5
         expected-output: |-
-          最大値：-3
-          最小値：-20
+          合計値は -15 です。
         comparison-method: exact
         timeout: 1
         max-score: 25
-    - name: Test11-2-4
-      id: test11-2-4
+    - name: Test11-3-4
+      id: test11-3-4
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test11-2-4
+        test-name: Test11-3-4
         setup-command: ''
         command: gcc main.c -o main && ./main
         input: |-
           100
+          -50
+          200
+          -100
           50
-          100
-          50
-          75
         expected-output: |-
-          最大値：100
-          最小値：50
+          合計値は 200 です。
         comparison-method: exact
         timeout: 1
         max-score: 25
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        TEST11-2-1_RESULTS: "${{steps.test11-2-1.outputs.result}}"
-        TEST11-2-2_RESULTS: "${{steps.test11-2-2.outputs.result}}"
-        TEST11-2-3_RESULTS: "${{steps.test11-2-3.outputs.result}}"
-        TEST11-2-4_RESULTS: "${{steps.test11-2-4.outputs.result}}"
+        TEST11-3-1_RESULTS: "${{steps.test11-3-1.outputs.result}}"
+        TEST11-3-2_RESULTS: "${{steps.test11-3-2.outputs.result}}"
+        TEST11-3-3_RESULTS: "${{steps.test11-3-3.outputs.result}}"
+        TEST11-3-4_RESULTS: "${{steps.test11-3-4.outputs.result}}"
       with:
-        runners: test11-2-1,test11-2-2,test11-2-3,test11-2-4
+        runners: test11-3-1,test11-3-2,test11-3-3,test11-3-4
