@@ -13,84 +13,88 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Test11-1-1
-      id: test11-1-1
+    - name: Test11-2-1
+      id: test11-2-1
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test11-1-1
+        test-name: Test11-2-1
         setup-command: ''
         command: gcc main.c -o main && ./main
         input: |-
-          5
-          2
-          8
+          45
+          7
+          92
+          18
+          53
         expected-output: |-
-          2
-          5
-          8
+          最大値：92
+          最小値：7
         comparison-method: exact
         timeout: 1
         max-score: 25
-    - name: Test11-1-2
-      id: test11-1-2
+    - name: Test11-2-2
+      id: test11-2-2
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test11-1-2
+        test-name: Test11-2-2
         setup-command: ''
         command: gcc main.c -o main && ./main
         input: |-
           10
           20
           30
+          40
+          50
         expected-output: |-
-          10
-          20
-          30
+          最大値：50
+          最小値：10
         comparison-method: exact
         timeout: 1
         max-score: 25
-    - name: Test11-1-3
-      id: test11-1-3
+    - name: Test11-2-3
+      id: test11-2-3
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test11-1-3
+        test-name: Test11-2-3
         setup-command: ''
         command: gcc main.c -o main && ./main
         input: |-
-          99
-          50
-          12
+          -5
+          -12
+          -3
+          -8
+          -20
         expected-output: |-
-          12
-          50
-          99
+          最大値：-3
+          最小値：-20
         comparison-method: exact
         timeout: 1
         max-score: 25
-    - name: Test11-1-4
-      id: test11-1-4
+    - name: Test11-2-4
+      id: test11-2-4
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test11-1-4
+        test-name: Test11-2-4
         setup-command: ''
         command: gcc main.c -o main && ./main
         input: |-
-          7
-          3
-          7
+          100
+          50
+          100
+          50
+          75
         expected-output: |-
-          3
-          7
-          7
+          最大値：100
+          最小値：50
         comparison-method: exact
         timeout: 1
         max-score: 25
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        TEST11-1-1_RESULTS: "${{steps.test11-1-1.outputs.result}}"
-        TEST11-1-2_RESULTS: "${{steps.test11-1-2.outputs.result}}"
-        TEST11-1-3_RESULTS: "${{steps.test11-1-3.outputs.result}}"
-        TEST11-1-4_RESULTS: "${{steps.test11-1-4.outputs.result}}"
+        TEST11-2-1_RESULTS: "${{steps.test11-2-1.outputs.result}}"
+        TEST11-2-2_RESULTS: "${{steps.test11-2-2.outputs.result}}"
+        TEST11-2-3_RESULTS: "${{steps.test11-2-3.outputs.result}}"
+        TEST11-2-4_RESULTS: "${{steps.test11-2-4.outputs.result}}"
       with:
-        runners: test11-1-1,test11-1-2,test11-1-3,test11-1-4
+        runners: test11-2-1,test11-2-2,test11-2-3,test11-2-4
