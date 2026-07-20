@@ -13,83 +13,22 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Test12-2-1
-      id: test12-2-1
+    - name: Testexam1-1-1
+      id: testexam1-1-1
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test12-2-1
+        test-name: Testexam1-1-1
         setup-command: ''
         command: gcc main.c -o main && ./main
-        input: |-
-          Au
+        input: ''
         expected-output: |-
-          Au の 比重は 19.32、価格は 7148 円です。
+          Hello Chutora
         comparison-method: exact
         timeout: 1
-        max-score: 20
-    - name: Test12-2-2
-      id: test12-2-2
-      uses: classroom-resources/autograding-io-grader@v1
-      with:
-        test-name: Test12-2-2
-        setup-command: ''
-        command: gcc main.c -o main && ./main
-        input: |-
-          Fe
-        expected-output: |-
-          Fe の 比重は 7.85、価格は 40 円です。
-        comparison-method: exact
-        timeout: 1
-        max-score: 20
-    - name: Test12-2-3
-      id: test12-2-3
-      uses: classroom-resources/autograding-io-grader@v1
-      with:
-        test-name: Test12-2-3
-        setup-command: ''
-        command: gcc main.c -o main && ./main
-        input: |-
-          Ag
-        expected-output: |-
-          Ag の 比重は 10.49、価格は 106 円です。
-        comparison-method: exact
-        timeout: 1
-        max-score: 20
-    - name: Test12-2-4
-      id: test12-2-4
-      uses: classroom-resources/autograding-io-grader@v1
-      with:
-        test-name: Test12-2-4
-        setup-command: ''
-        command: gcc main.c -o main && ./main
-        input: |-
-          Ti
-        expected-output: |-
-          Ti の 比重は 4.51、価格は 250 円です。
-        comparison-method: exact
-        timeout: 1
-        max-score: 20
-    - name: Test12-2-5
-      id: test12-2-5
-      uses: classroom-resources/autograding-io-grader@v1
-      with:
-        test-name: Test12-2-5
-        setup-command: ''
-        command: gcc main.c -o main && ./main
-        input: |-
-          Pt
-        expected-output: |-
-          Pt の 比重は 21.45、価格は 4502 円です。
-        comparison-method: exact
-        timeout: 1
-        max-score: 20
+        max-score: 50
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        TEST12-2-1_RESULTS: "${{steps.test12-2-1.outputs.result}}"
-        TEST12-2-2_RESULTS: "${{steps.test12-2-2.outputs.result}}"
-        TEST12-2-3_RESULTS: "${{steps.test12-2-3.outputs.result}}"
-        TEST12-2-4_RESULTS: "${{steps.test12-2-4.outputs.result}}"
-        TEST12-2-5_RESULTS: "${{steps.test12-2-5.outputs.result}}"
+        TESTEXAM1-1-1_RESULTS: "${{steps.testexam1-1-1.outputs.result}}"
       with:
-        runners: test12-2-1,test12-2-2,test12-2-3,test12-2-4,test12-2-5
+        runners: testexam1-1-1
