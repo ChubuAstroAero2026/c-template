@@ -13,88 +13,136 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Testexam1-4-1
-      id: testexam1-4-1
+    - name: Testexam1-5-1
+      id: testexam1-5-1
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Testexam1-4-1
+        test-name: Testexam1-5-1
         setup-command: ''
-        command: gcc main.c -o main && ./main
+        command: gcc main.c -o main -lm && ./main
+        input: |-
+          24
+          8
+        expected-output: |-
+          50.91
+        comparison-method: exact
+        timeout: 1
+        max-score: 13
+    - name: Testexam1-5-2
+      id: testexam1-5-2
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Testexam1-5-2
+        setup-command: ''
+        command: gcc main.c -o main -lm && ./main
+        input: |-
+          8
+          8
+        expected-output: |-
+          5.66
+        comparison-method: exact
+        timeout: 1
+        max-score: 13
+    - name: Testexam1-5-3
+      id: testexam1-5-3
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Testexam1-5-3
+        setup-command: ''
+        command: gcc main.c -o main -lm && ./main
+        input: |-
+          8
+          16
+        expected-output: |-
+          3.06
+        comparison-method: exact
+        timeout: 1
+        max-score: 13
+    - name: Testexam1-5-4
+      id: testexam1-5-4
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Testexam1-5-4
+        setup-command: ''
+        command: gcc main.c -o main -lm && ./main
+        input: |-
+          16
+          32
+        expected-output: |-
+          6.24
+        comparison-method: exact
+        timeout: 1
+        max-score: 13
+    - name: Testexam1-5-5
+      id: testexam1-5-5
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Testexam1-5-5
+        setup-command: ''
+        command: gcc main.c -o main -lm && ./main
         input: |-
           5
-          3
+          10
         expected-output: |-
-          ポケットの中にはビスケットが 8つ
+          1.84
         comparison-method: exact
         timeout: 1
-        max-score: 20
-    - name: Testexam1-4-2
-      id: testexam1-4-2
+        max-score: 12
+    - name: Testexam1-5-6
+      id: testexam1-5-6
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Testexam1-4-2
+        test-name: Testexam1-5-6
         setup-command: ''
-        command: gcc main.c -o main && ./main
+        command: gcc main.c -o main -lm && ./main
         input: |-
-          3
-          5
+          8
+          25
         expected-output: |-
-          ポケットの中にはビスケットが 8つ
+          1.99
         comparison-method: exact
         timeout: 1
-        max-score: 20
-    - name: Testexam1-4-3
-      id: testexam1-4-3
+        max-score: 12
+    - name: Testexam1-5-7
+      id: testexam1-5-7
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Testexam1-4-3
+        test-name: Testexam1-5-7
         setup-command: ''
-        command: gcc main.c -o main && ./main
+        command: gcc main.c -o main -lm && ./main
         input: |-
-          0
-          7
+          10
+          16
         expected-output: |-
-          ポケットの中にはビスケットが 7つ
+          4.78
         comparison-method: exact
         timeout: 1
-        max-score: 20
-    - name: Testexam1-4-4
-      id: testexam1-4-4
+        max-score: 12
+    - name: Testexam1-5-8
+      id: testexam1-5-8
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Testexam1-4-4
+        test-name: Testexam1-5-8
         setup-command: ''
-        command: gcc main.c -o main && ./main
+        command: gcc main.c -o main -lm && ./main
         input: |-
-          3
-          2
+          20
+          4
         expected-output: |-
-          ポケットの中にはビスケットが 5つ
+          50.00
         comparison-method: exact
         timeout: 1
-        max-score: 20
-    - name: Testexam1-4-5
-      id: testexam1-4-5
-      uses: classroom-resources/autograding-io-grader@v1
-      with:
-        test-name: Testexam1-4-5
-        setup-command: ''
-        command: gcc main.c -o main && ./main
-        input: |-
-          1
-          5
-        expected-output: |-
-          ポケットの中にはビスケットが 6つ
-        comparison-method: exact
-        timeout: 1
-        max-score: 20
+        max-score: 12
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        TESTEXAM1-4-1_RESULTS: "${{steps.testexam1-4-1.outputs.result}}"
-        TESTEXAM1-4-2_RESULTS: "${{steps.testexam1-4-2.outputs.result}}"
-        TESTEXAM1-4-3_RESULTS: "${{steps.testexam1-4-3.outputs.result}}"
-        TESTEXAM1-4-4_RESULTS: "${{steps.testexam1-4-4.outputs.result}}"
-        TESTEXAM1-4-5_RESULTS: "${{steps.testexam1-4-5.outputs.result}}"
+        TESTEXAM1-5-1_RESULTS: "${{steps.testexam1-5-1.outputs.result}}"
+        TESTEXAM1-5-2_RESULTS: "${{steps.testexam1-5-2.outputs.result}}"
+        TESTEXAM1-5-3_RESULTS: "${{steps.testexam1-5-3.outputs.result}}"
+        TESTEXAM1-5-4_RESULTS: "${{steps.testexam1-5-4.outputs.result}}"
+        TESTEXAM1-5-5_RESULTS: "${{steps.testexam1-5-5.outputs.result}}"
+        TESTEXAM1-5-6_RESULTS: "${{steps.testexam1-5-6.outputs.result}}"
+        TESTEXAM1-5-7_RESULTS: "${{steps.testexam1-5-7.outputs.result}}"
+        TESTEXAM1-5-8_RESULTS: "${{steps.testexam1-5-8.outputs.result}}"
       with:
-        runners: testexam1-4-1,testexam1-4-2,testexam1-4-3,testexam1-4-4,testexam1-4-5
+        runners: testexam1-5-1,testexam1-5-2,testexam1-5-3,testexam1-5-4,testexam1-5-5,testexam1-5-6,testexam1-5-7,testexam1-5-8
