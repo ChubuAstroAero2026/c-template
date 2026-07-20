@@ -13,136 +13,88 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Testexam1-5-1
-      id: testexam1-5-1
+    - name: Testexam1-6-1
+      id: testexam1-6-1
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Testexam1-5-1
+        test-name: Testexam1-6-1
         setup-command: ''
-        command: gcc main.c -o main -lm && ./main
+        command: gcc main.c -o main && ./main
         input: |-
-          24
-          8
+          900
+          1
         expected-output: |-
-          50.91
+          480
         comparison-method: exact
         timeout: 1
-        max-score: 13
-    - name: Testexam1-5-2
-      id: testexam1-5-2
+        max-score: 20
+    - name: Testexam1-6-2
+      id: testexam1-6-2
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Testexam1-5-2
+        test-name: Testexam1-6-2
         setup-command: ''
-        command: gcc main.c -o main -lm && ./main
+        command: gcc main.c -o main && ./main
         input: |-
-          8
-          8
+          900
+          3
         expected-output: |-
-          5.66
+          1760
         comparison-method: exact
         timeout: 1
-        max-score: 13
-    - name: Testexam1-5-3
-      id: testexam1-5-3
+        max-score: 20
+    - name: Testexam1-6-3
+      id: testexam1-6-3
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Testexam1-5-3
+        test-name: Testexam1-6-3
         setup-command: ''
-        command: gcc main.c -o main -lm && ./main
+        command: gcc main.c -o main && ./main
         input: |-
-          8
-          16
+          300
+          0
         expected-output: |-
-          3.06
+          0
         comparison-method: exact
         timeout: 1
-        max-score: 13
-    - name: Testexam1-5-4
-      id: testexam1-5-4
+        max-score: 20
+    - name: Testexam1-6-4
+      id: testexam1-6-4
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Testexam1-5-4
+        test-name: Testexam1-6-4
         setup-command: ''
-        command: gcc main.c -o main -lm && ./main
+        command: gcc main.c -o main && ./main
         input: |-
-          16
-          32
+          600
+          1
         expected-output: |-
-          6.24
+          320
         comparison-method: exact
         timeout: 1
-        max-score: 13
-    - name: Testexam1-5-5
-      id: testexam1-5-5
+        max-score: 20
+    - name: Testexam1-6-5
+      id: testexam1-6-5
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Testexam1-5-5
+        test-name: Testexam1-6-5
         setup-command: ''
-        command: gcc main.c -o main -lm && ./main
+        command: gcc main.c -o main && ./main
         input: |-
-          5
-          10
+          1800
+          1
         expected-output: |-
-          1.84
+          3680
         comparison-method: exact
         timeout: 1
-        max-score: 12
-    - name: Testexam1-5-6
-      id: testexam1-5-6
-      uses: classroom-resources/autograding-io-grader@v1
-      with:
-        test-name: Testexam1-5-6
-        setup-command: ''
-        command: gcc main.c -o main -lm && ./main
-        input: |-
-          8
-          25
-        expected-output: |-
-          1.99
-        comparison-method: exact
-        timeout: 1
-        max-score: 12
-    - name: Testexam1-5-7
-      id: testexam1-5-7
-      uses: classroom-resources/autograding-io-grader@v1
-      with:
-        test-name: Testexam1-5-7
-        setup-command: ''
-        command: gcc main.c -o main -lm && ./main
-        input: |-
-          10
-          16
-        expected-output: |-
-          4.78
-        comparison-method: exact
-        timeout: 1
-        max-score: 12
-    - name: Testexam1-5-8
-      id: testexam1-5-8
-      uses: classroom-resources/autograding-io-grader@v1
-      with:
-        test-name: Testexam1-5-8
-        setup-command: ''
-        command: gcc main.c -o main -lm && ./main
-        input: |-
-          20
-          4
-        expected-output: |-
-          50.00
-        comparison-method: exact
-        timeout: 1
-        max-score: 12
+        max-score: 20
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        TESTEXAM1-5-1_RESULTS: "${{steps.testexam1-5-1.outputs.result}}"
-        TESTEXAM1-5-2_RESULTS: "${{steps.testexam1-5-2.outputs.result}}"
-        TESTEXAM1-5-3_RESULTS: "${{steps.testexam1-5-3.outputs.result}}"
-        TESTEXAM1-5-4_RESULTS: "${{steps.testexam1-5-4.outputs.result}}"
-        TESTEXAM1-5-5_RESULTS: "${{steps.testexam1-5-5.outputs.result}}"
-        TESTEXAM1-5-6_RESULTS: "${{steps.testexam1-5-6.outputs.result}}"
-        TESTEXAM1-5-7_RESULTS: "${{steps.testexam1-5-7.outputs.result}}"
-        TESTEXAM1-5-8_RESULTS: "${{steps.testexam1-5-8.outputs.result}}"
+        TESTEXAM1-6-1_RESULTS: "${{steps.testexam1-6-1.outputs.result}}"
+        TESTEXAM1-6-2_RESULTS: "${{steps.testexam1-6-2.outputs.result}}"
+        TESTEXAM1-6-3_RESULTS: "${{steps.testexam1-6-3.outputs.result}}"
+        TESTEXAM1-6-4_RESULTS: "${{steps.testexam1-6-4.outputs.result}}"
+        TESTEXAM1-6-5_RESULTS: "${{steps.testexam1-6-5.outputs.result}}"
       with:
-        runners: testexam1-5-1,testexam1-5-2,testexam1-5-3,testexam1-5-4,testexam1-5-5,testexam1-5-6,testexam1-5-7,testexam1-5-8
+        runners: testexam1-6-1,testexam1-6-2,testexam1-6-3,testexam1-6-4,testexam1-6-5
