@@ -13,72 +13,88 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Testexam1-3-1
-      id: testexam1-3-1
+    - name: Testexam1-4-1
+      id: testexam1-4-1
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Testexam1-3-1
-        setup-command: ''
-        command: gcc main.c -o main && ./main
-        input: |-
-          2
-          3
-        expected-output: |-
-          15
-        comparison-method: exact
-        timeout: 1
-        max-score: 25
-    - name: Testexam1-3-2
-      id: testexam1-3-2
-      uses: classroom-resources/autograding-io-grader@v1
-      with:
-        test-name: Testexam1-3-2
-        setup-command: ''
-        command: gcc main.c -o main && ./main
-        input: |-
-          -5
-          -2
-        expected-output: |-
-          -21
-        comparison-method: exact
-        timeout: 1
-        max-score: 25
-    - name: Testexam1-3-3
-      id: testexam1-3-3
-      uses: classroom-resources/autograding-io-grader@v1
-      with:
-        test-name: Testexam1-3-3
-        setup-command: ''
-        command: gcc main.c -o main && ./main
-        input: |-
-          10
-          -4
-        expected-output: |-
-          18
-        comparison-method: exact
-        timeout: 1
-        max-score: 25
-    - name: Testexam1-3-4
-      id: testexam1-3-4
-      uses: classroom-resources/autograding-io-grader@v1
-      with:
-        test-name: Testexam1-3-4
+        test-name: Testexam1-4-1
         setup-command: ''
         command: gcc main.c -o main && ./main
         input: |-
           5
-          -5
+          3
         expected-output: |-
-          0
+          ポケットの中にはビスケットが 8つ
         comparison-method: exact
         timeout: 1
-        max-score: 25
+        max-score: 20
+    - name: Testexam1-4-2
+      id: testexam1-4-2
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Testexam1-4-2
+        setup-command: ''
+        command: gcc main.c -o main && ./main
+        input: |-
+          3
+          5
+        expected-output: |-
+          ポケットの中にはビスケットが 8つ
+        comparison-method: exact
+        timeout: 1
+        max-score: 20
+    - name: Testexam1-4-3
+      id: testexam1-4-3
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Testexam1-4-3
+        setup-command: ''
+        command: gcc main.c -o main && ./main
+        input: |-
+          0
+          7
+        expected-output: |-
+          ポケットの中にはビスケットが 7つ
+        comparison-method: exact
+        timeout: 1
+        max-score: 20
+    - name: Testexam1-4-4
+      id: testexam1-4-4
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Testexam1-4-4
+        setup-command: ''
+        command: gcc main.c -o main && ./main
+        input: |-
+          3
+          2
+        expected-output: |-
+          ポケットの中にはビスケットが 5つ
+        comparison-method: exact
+        timeout: 1
+        max-score: 20
+    - name: Testexam1-4-5
+      id: testexam1-4-5
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Testexam1-4-5
+        setup-command: ''
+        command: gcc main.c -o main && ./main
+        input: |-
+          1
+          5
+        expected-output: |-
+          ポケットの中にはビスケットが 6つ
+        comparison-method: exact
+        timeout: 1
+        max-score: 20
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        TESTEXAM1-3-1_RESULTS: "${{steps.testexam1-3-1.outputs.result}}"
-        TESTEXAM1-3-2_RESULTS: "${{steps.testexam1-3-2.outputs.result}}"
-        TESTEXAM1-3-3_RESULTS: "${{steps.testexam1-3-3.outputs.result}}"
-        TESTEXAM1-3-4_RESULTS: "${{steps.testexam1-3-4.outputs.result}}"
+        TESTEXAM1-4-1_RESULTS: "${{steps.testexam1-4-1.outputs.result}}"
+        TESTEXAM1-4-2_RESULTS: "${{steps.testexam1-4-2.outputs.result}}"
+        TESTEXAM1-4-3_RESULTS: "${{steps.testexam1-4-3.outputs.result}}"
+        TESTEXAM1-4-4_RESULTS: "${{steps.testexam1-4-4.outputs.result}}"
+        TESTEXAM1-4-5_RESULTS: "${{steps.testexam1-4-5.outputs.result}}"
       with:
-        runners: testexam1-3-1,testexam1-3-2,testexam1-3-3,testexam1-3-4
+        runners: testexam1-4-1,testexam1-4-2,testexam1-4-3,testexam1-4-4,testexam1-4-5
