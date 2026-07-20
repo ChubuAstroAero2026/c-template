@@ -81,7 +81,7 @@ jobs:
           2 23.4
           3 34.5
         expected-output: |-
-          ID:1  (12.3kg)
+          ID:1 (12.3kg)
           ID:2 (23.4kg)
           ID:3 (34.5kg)
         comparison-method: exact
