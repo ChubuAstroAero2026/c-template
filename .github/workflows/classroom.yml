@@ -13,88 +13,88 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Testexam1-2-1
-      id: testexam1-2-1
+    - name: Test3-1-1
+      id: test3-1-1
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Testexam1-2-1
+        test-name: Test3-1-1
         setup-command: ''
         command: gcc main.c -o main && ./main
         input: |-
-          5
-        expected-output: |-
-          chutora1
-          chutora2
-          chutora3
-          chutora5
-          chutora6
-        comparison-method: exact
-        timeout: 1
-        max-score: 25
-    - name: Testexam1-2-2
-      id: testexam1-2-2
-      uses: classroom-resources/autograding-io-grader@v1
-      with:
-        test-name: Testexam1-2-2
-        setup-command: ''
-        command: gcc main.c -o main && ./main
-        input: |-
+          2
           3
         expected-output: |-
-          chutora1
-          chutora2
-          chutora3
+          25
         comparison-method: exact
         timeout: 1
-        max-score: 25
-    - name: Testexam1-2-3
-      id: testexam1-2-3
+        max-score: 20
+    - name: Test3-1-2
+      id: test3-1-2
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Testexam1-2-3
+        test-name: Test3-1-2
         setup-command: ''
         command: gcc main.c -o main && ./main
         input: |-
-          15
+          0
+          5
         expected-output: |-
-          chutora1
-          chutora2
-          chutora3
-          chutora5
-          chutora6
-          chutora7
-          chutora8
-          chutora10
-          chutora11
-          chutora12
-          chutora13
-          chutora15
-          chutora16
-          chutora17
-          chutora18
+          25
         comparison-method: exact
         timeout: 1
-        max-score: 25
-    - name: Testexam1-2-4
-      id: testexam1-2-4
+        max-score: 20
+    - name: Test3-1-3
+      id: test3-1-3
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Testexam1-2-4
+        test-name: Test3-1-3
+        setup-command: ''
+        command: gcc main.c -o main && ./main
+        input: |-
+          10
+          20
+        expected-output: |-
+          900
+        comparison-method: exact
+        timeout: 1
+        max-score: 20
+    - name: Test3-1-4
+      id: test3-1-4
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Test3-1-4
         setup-command: ''
         command: gcc main.c -o main && ./main
         input: |-
           1
+          1
         expected-output: |-
-          chutora1
+          4
         comparison-method: exact
         timeout: 1
-        max-score: 25
+        max-score: 20
+    - name: Test3-1-5
+      id: test3-1-5
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Test3-1-5
+        setup-command: ''
+        command: gcc main.c -o main && ./main
+        input: |-
+          100
+          0
+        expected-output: |-
+          10000
+        comparison-method: exact
+        timeout: 1
+        max-score: 20
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        TESTEXAM1-2-1_RESULTS: "${{steps.testexam1-2-1.outputs.result}}"
-        TESTEXAM1-2-2_RESULTS: "${{steps.testexam1-2-2.outputs.result}}"
-        TESTEXAM1-2-3_RESULTS: "${{steps.testexam1-2-3.outputs.result}}"
-        TESTEXAM1-2-4_RESULTS: "${{steps.testexam1-2-4.outputs.result}}"
+        TEST3_1_1_RESULTS: "${{steps.test3-1-1.outputs.result}}"
+        TEST3_1_2_RESULTS: "${{steps.test3-1-2.outputs.result}}"
+        TEST3_1_3_RESULTS: "${{steps.test3-1-3.outputs.result}}"
+        TEST3_1_4_RESULTS: "${{steps.test3-1-4.outputs.result}}"
+        TEST3_1_5_RESULTS: "${{steps.test3-1-5.outputs.result}}"
       with:
-        runners: testexam1-2-1,testexam1-2-2,testexam1-2-3,testexam1-2-4
+        runners: test3-1-1,test3-1-2,test3-1-3,test3-1-4,test3-1-5
