@@ -13,67 +13,49 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: T1-2-1
-      id: t1-2-1
+    - name: Testexam1-2-1
+      id: testexam1-2-1
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: T1-2-1
+        test-name: Testexam1-2-1
         setup-command: ''
         command: gcc main.c -o main && ./main
-        input: '1'
-        expected-output: |-
-          chutora1
-        comparison-method: exact
-        timeout: 1
-        max-score: 20
-    - name: T1-2-2
-      id: t1-2-2
-      uses: classroom-resources/autograding-io-grader@v1
-      with:
-        test-name: T1-2-2
-        setup-command: ''
-        command: gcc main.c -o main && ./main
-        input: '6'
+        input: |-
+          5
         expected-output: |-
           chutora1
           chutora2
           chutora3
           chutora5
           chutora6
-          chutora7
         comparison-method: exact
         timeout: 1
-        max-score: 20
-    - name: T1-2-3
-      id: t1-2-3
+        max-score: 25
+    - name: Testexam1-2-2
+      id: testexam1-2-2
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: T1-2-3
+        test-name: Testexam1-2-2
         setup-command: ''
         command: gcc main.c -o main && ./main
-        input: '10'
+        input: |-
+          3
         expected-output: |-
           chutora1
           chutora2
           chutora3
-          chutora5
-          chutora6
-          chutora7
-          chutora8
-          chutora10
-          chutora11
-          chutora12
         comparison-method: exact
         timeout: 1
-        max-score: 20
-    - name: T1-2-4
-      id: t1-2-4
+        max-score: 25
+    - name: Testexam1-2-3
+      id: testexam1-2-3
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: T1-2-4
+        test-name: Testexam1-2-3
         setup-command: ''
         command: gcc main.c -o main && ./main
-        input: '15'
+        input: |-
+          15
         expected-output: |-
           chutora1
           chutora2
@@ -92,46 +74,27 @@ jobs:
           chutora18
         comparison-method: exact
         timeout: 1
-        max-score: 20
-    - name: T1-2-5
-      id: t1-2-5
+        max-score: 25
+    - name: Testexam1-2-4
+      id: testexam1-2-4
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: T1-2-5
+        test-name: Testexam1-2-4
         setup-command: ''
         command: gcc main.c -o main && ./main
-        input: '20'
+        input: |-
+          1
         expected-output: |-
           chutora1
-          chutora2
-          chutora3
-          chutora5
-          chutora6
-          chutora7
-          chutora8
-          chutora10
-          chutora11
-          chutora12
-          chutora13
-          chutora15
-          chutora16
-          chutora17
-          chutora18
-          chutora20
-          chutora21
-          chutora22
-          chutora23
-          chutora25
         comparison-method: exact
         timeout: 1
-        max-score: 20
+        max-score: 25
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        T1_2_1_RESULTS: "${{steps.t1-2-1.outputs.result}}"
-        T1_2_2_RESULTS: "${{steps.t1-2-2.outputs.result}}"
-        T1_2_3_RESULTS: "${{steps.t1-2-3.outputs.result}}"
-        T1_2_4_RESULTS: "${{steps.t1-2-4.outputs.result}}"
-        T1_2_5_RESULTS: "${{steps.t1-2-5.outputs.result}}"
+        TESTEXAM1-2-1_RESULTS: "${{steps.testexam1-2-1.outputs.result}}"
+        TESTEXAM1-2-2_RESULTS: "${{steps.testexam1-2-2.outputs.result}}"
+        TESTEXAM1-2-3_RESULTS: "${{steps.testexam1-2-3.outputs.result}}"
+        TESTEXAM1-2-4_RESULTS: "${{steps.testexam1-2-4.outputs.result}}"
       with:
-        runners: t1-2-1,t1-2-2,t1-2-3,t1-2-4,t1-2-5
+        runners: testexam1-2-1,testexam1-2-2,testexam1-2-3,testexam1-2-4
