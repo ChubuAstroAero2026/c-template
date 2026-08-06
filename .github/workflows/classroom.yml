@@ -13,83 +13,72 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Test3-1-1
-      id: test3-1-1
+    - name: t3-1-new-1
+      id: t3-1-new-1
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test3-1-1
+        test-name: t3-1-new-1
         setup-command: ''
-        command: gcc main.c -o main && ./main
-        input: '95'
+        command: gcc main.c -o main -lm && ./main
+        input: |-
+          2
+          3
         expected-output: |-
-          テストの点数95
-          判定S
+          25
         comparison-method: exact
         timeout: 1
-        max-score: 20
-    - name: Test3-1-2
-      id: test3-1-2
+        max-score: 25
+    - name: t3-1-new-2
+      id: t3-1-new-2
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test3-1-2
+        test-name: t3-1-new-2
         setup-command: ''
-        command: gcc main.c -o main && ./main
-        input: '59'
+        command: gcc main.c -o main -lm && ./main
+        input: |-
+          -4
+          1
         expected-output: |-
-          テストの点数59
-          判定E
+          9
         comparison-method: exact
         timeout: 1
-        max-score: 20
-    - name: Test3-1-3
-      id: test3-1-3
+        max-score: 25
+    - name: t3-1-new-3
+      id: t3-1-new-3
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test3-1-3
+        test-name: t3-1-new-3
         setup-command: ''
-        command: gcc main.c -o main && ./main
-        input: '80'
+        command: gcc main.c -o main -lm && ./main
+        input: |-
+          0
+          0
         expected-output: |-
-          テストの点数80
-          判定A
+          0
         comparison-method: exact
         timeout: 1
-        max-score: 20
-    - name: Test3-1-4
-      id: test3-1-4
+        max-score: 25
+    - name: t3-1-new-4
+      id: t3-1-new-4
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test3-1-4
+        test-name: t3-1-new-4
         setup-command: ''
-        command: gcc main.c -o main && ./main
-        input: '77'
+        command: gcc main.c -o main -lm && ./main
+        input: |-
+          10
+          15
         expected-output: |-
-          テストの点数77
-          判定B
+          625
         comparison-method: exact
         timeout: 1
-        max-score: 20
-    - name: Test3-1-5
-      id: test3-1-5
-      uses: classroom-resources/autograding-io-grader@v1
-      with:
-        test-name: Test3-1-5
-        setup-command: ''
-        command: gcc main.c -o main && ./main
-        input: "-10"
-        expected-output: |-
-          テストの点数-10
-          判定E
-        comparison-method: exact
-        timeout: 1
-        max-score: 20
+        max-score: 25
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        TEST3_1_1_RESULTS: "${{steps.test3-1-1.outputs.result}}"
-        TEST3_1_2_RESULTS: "${{steps.test3-1-2.outputs.result}}"
-        TEST3_1_3_RESULTS: "${{steps.test3-1-3.outputs.result}}"
-        TEST3_1_4_RESULTS: "${{steps.test3-1-4.outputs.result}}"
-        TEST3_1_5_RESULTS: "${{steps.test3-1-5.outputs.result}}"
+        T3-1-NEW-1_RESULTS: "${{steps.t3-1-new-1.outputs.result}}"
+        T3-1-NEW-2_RESULTS: "${{steps.t3-1-new-2.outputs.result}}"
+        T3-1-NEW-3_RESULTS: "${{steps.t3-1-new-3.outputs.result}}"
+        T3-1-NEW-4_RESULTS: "${{steps.t3-1-new-4.outputs.result}}"
       with:
-        runners: test3-1-1,test3-1-2,test3-1-3,test3-1-4,test3-1-5
+        runners: t3-1-new-1,t3-1-new-2,t3-1-new-3,t3-1-new-4
