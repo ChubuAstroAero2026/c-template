@@ -13,110 +13,22 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Testexam1-7-1
-      id: testexam1-7-1
+    - name: Test1-1
+      id: test1-1
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Testexam1-7-1
+        test-name: Test1-1
         setup-command: ''
         command: gcc main.c -o main && ./main
-        input: |-
-          3
-          105 45.2
-          101 38.5
-          103 41.0
+        input: ''
         expected-output: |-
-          ID:101 (38.5kg)
-          ID:103 (41.0kg)
-          ID:105 (45.2kg)
+          Hello Chutora
         comparison-method: exact
         timeout: 1
-        max-score: 20
-    - name: Testexam1-7-2
-      id: testexam1-7-2
-      uses: classroom-resources/autograding-io-grader@v1
-      with:
-        test-name: Testexam1-7-2
-        setup-command: ''
-        command: gcc main.c -o main && ./main
-        input: |-
-          1
-          200 50.5
-        expected-output: |-
-          ID:200 (50.5kg)
-        comparison-method: exact
-        timeout: 1
-        max-score: 20
-    - name: Testexam1-7-3
-      id: testexam1-7-3
-      uses: classroom-resources/autograding-io-grader@v1
-      with:
-        test-name: Testexam1-7-3
-        setup-command: ''
-        command: gcc main.c -o main && ./main
-        input: |-
-          4
-          10 60.0
-          20 50.0
-          30 40.0
-          40 30.0
-        expected-output: |-
-          ID:40 (30.0kg)
-          ID:30 (40.0kg)
-          ID:20 (50.0kg)
-          ID:10 (60.0kg)
-        comparison-method: exact
-        timeout: 1
-        max-score: 20
-    - name: Testexam1-7-4
-      id: testexam1-7-4
-      uses: classroom-resources/autograding-io-grader@v1
-      with:
-        test-name: Testexam1-7-4
-        setup-command: ''
-        command: gcc main.c -o main && ./main
-        input: |-
-          3
-          1 12.3
-          2 23.4
-          3 34.5
-        expected-output: |-
-          ID:1 (12.3kg)
-          ID:2 (23.4kg)
-          ID:3 (34.5kg)
-        comparison-method: exact
-        timeout: 1
-        max-score: 20
-    - name: Testexam1-7-5
-      id: testexam1-7-5
-      uses: classroom-resources/autograding-io-grader@v1
-      with:
-        test-name: Testexam1-7-5
-        setup-command: ''
-        command: gcc main.c -o main && ./main
-        input: |-
-          5
-          99 9.9
-          55 5.5
-          88 8.8
-          66 6.6
-          77 7.7
-        expected-output: |-
-          ID:55 (5.5kg)
-          ID:66 (6.6kg)
-          ID:77 (7.7kg)
-          ID:88 (8.8kg)
-          ID:99 (9.9kg)
-        comparison-method: exact
-        timeout: 1
-        max-score: 20
+        max-score: 100
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        TESTEXAM1-7-1_RESULTS: "${{steps.testexam1-7-1.outputs.result}}"
-        TESTEXAM1-7-2_RESULTS: "${{steps.testexam1-7-2.outputs.result}}"
-        TESTEXAM1-7-3_RESULTS: "${{steps.testexam1-7-3.outputs.result}}"
-        TESTEXAM1-7-4_RESULTS: "${{steps.testexam1-7-4.outputs.result}}"
-        TESTEXAM1-7-5_RESULTS: "${{steps.testexam1-7-5.outputs.result}}"
+        TEST1-1_RESULTS: "${{steps.test1-1.outputs.result}}"
       with:
-        runners: testexam1-7-1,testexam1-7-2,testexam1-7-3,testexam1-7-4,testexam1-7-5
+        runners: test1-1
