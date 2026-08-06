@@ -13,22 +13,125 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Test1-1
-      id: test1-1
+    - name: T1-2-1
+      id: t1-2-1
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Test1-1
+        test-name: T1-2-1
         setup-command: ''
         command: gcc main.c -o main && ./main
-        input: ''
+        input: '1'
         expected-output: |-
-          Hello Chutora
+          chutora1
         comparison-method: exact
         timeout: 1
-        max-score: 100
+        max-score: 20
+    - name: T1-2-2
+      id: t1-2-2
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: T1-2-2
+        setup-command: ''
+        command: gcc main.c -o main && ./main
+        input: '6'
+        expected-output: |-
+          chutora1
+          chutora2
+          chutora3
+          chutora5
+          chutora6
+          chutora7
+        comparison-method: exact
+        timeout: 1
+        max-score: 20
+    - name: T1-2-3
+      id: t1-2-3
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: T1-2-3
+        setup-command: ''
+        command: gcc main.c -o main && ./main
+        input: '10'
+        expected-output: |-
+          chutora1
+          chutora2
+          chutora3
+          chutora5
+          chutora6
+          chutora7
+          chutora8
+          chutora10
+          chutora11
+          chutora12
+        comparison-method: exact
+        timeout: 1
+        max-score: 20
+    - name: T1-2-4
+      id: t1-2-4
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: T1-2-4
+        setup-command: ''
+        command: gcc main.c -o main && ./main
+        input: '15'
+        expected-output: |-
+          chutora1
+          chutora2
+          chutora3
+          chutora5
+          chutora6
+          chutora7
+          chutora8
+          chutora10
+          chutora11
+          chutora12
+          chutora13
+          chutora15
+          chutora16
+          chutora17
+          chutora18
+        comparison-method: exact
+        timeout: 1
+        max-score: 20
+    - name: T1-2-5
+      id: t1-2-5
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: T1-2-5
+        setup-command: ''
+        command: gcc main.c -o main && ./main
+        input: '20'
+        expected-output: |-
+          chutora1
+          chutora2
+          chutora3
+          chutora5
+          chutora6
+          chutora7
+          chutora8
+          chutora10
+          chutora11
+          chutora12
+          chutora13
+          chutora15
+          chutora16
+          chutora17
+          chutora18
+          chutora20
+          chutora21
+          chutora22
+          chutora23
+          chutora25
+        comparison-method: exact
+        timeout: 1
+        max-score: 20
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        TEST1-1_RESULTS: "${{steps.test1-1.outputs.result}}"
+        T1_2_1_RESULTS: "${{steps.t1-2-1.outputs.result}}"
+        T1_2_2_RESULTS: "${{steps.t1-2-2.outputs.result}}"
+        T1_2_3_RESULTS: "${{steps.t1-2-3.outputs.result}}"
+        T1_2_4_RESULTS: "${{steps.t1-2-4.outputs.result}}"
+        T1_2_5_RESULTS: "${{steps.t1-2-5.outputs.result}}"
       with:
-        runners: test1-1
+        runners: t1-2-1,t1-2-2,t1-2-3,t1-2-4,t1-2-5
